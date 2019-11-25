@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore,combineReducers} from 'redux';
+import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 
 //REDUCER
@@ -15,20 +15,11 @@ const name = (state=0,action) =>{
     return state;
 }
 
-let nameReducer = combineReducers({
-    name:name
-});
-
 //STORE
 let store = createStore(
-    nameReducer,
+    name,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
-
-//DISPATCH
-// store.dispatch(increment);
-
 
 ReactDOM.render(
 <Provider store={store}>

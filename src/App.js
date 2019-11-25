@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 
 function App() {
-  const nameSelector = useSelector(state=>state.name);
+  const nameSelector = useSelector(state=>state);
   const dispatch = useDispatch();
 
   //ACTION
